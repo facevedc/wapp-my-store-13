@@ -1,0 +1,11 @@
+<div class="col-12 d-flex justify-content-end mt-5 mb-5">
+    <div class="btn-group">
+        <label>Ordenar por:</label>
+        <button class="btn dropdown-toggle" type="button" id="defaultDropdown" data-bs-toggle="dropdown" data-bs-auto-close="true" aria-expanded="false" aria-label="btn-oreder">
+          {{selected}}
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="defaultDropdown">
+          <li><span class="dropdown-item" *ngFor="let f of filter; let i = index" (click)="selectItem(i)">{{f}}</span></li>
+        </ul>
+    </div>
+</div>

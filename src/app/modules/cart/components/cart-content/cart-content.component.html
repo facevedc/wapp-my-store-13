@@ -1,0 +1,36 @@
+<div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasExampleLabel">Tu Carrito de compras ({{ cart ? cart.totalProductos : '0' }})</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+</div>
+<hr>
+<div class="container-products" >
+    <ng-container *ngIf="cart && cart.cartProductList.length > 0">
+        <app-product-car *ngFor=" let product of cart.cartProductList" [productCar]="product"></app-product-car>
+        <hr>
+        <div class="row">
+            <div class="col-11 d-flex align-items-center justify-content-end" *ngIf="cart.descuento > 0">
+                <strong> Descuento: $ {{cart.descuento}}</strong>
+             </div>
+            <div class="col-11 d-flex align-items-center justify-content-end">
+               <strong> Total a Pagar: $ {{cart.totalMonto}}</strong>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-11 d-flex align-items-center justify-content-end">
+                <button class="btn btn-warning" (click)="sendCheckout()" aria-label="pay-button">Ir a Pagar</button>
+            </div>
+        </div>
+    </ng-container>
+    <ng-container *ngIf="!cart || cart.cartProductList.length === 0">
+        <hr>
+        <div class="row">
+            <div class="col-11 d-flex align-items-center justify-content-center">
+                <strong>No cuentas con productos en el carro.</strong>
+             </div>
+        </div>
+        <hr>
+    </ng-container>
+</div>
+
+

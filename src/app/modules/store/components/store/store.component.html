@@ -1,0 +1,15 @@
+<div class="row">
+    <app-banner [bannerList]="store.banner"></app-banner>
+</div>
+<div class="row">
+   <app-categories *ngIf="categoryList > []" [categories]="categoryList" (categoryEmit)="getReceiveCategory($event)"></app-categories>
+</div>
+<div class="row">
+    <app-filter (selectedEmit)="getReceiveFilter($event)"></app-filter>
+</div>
+<div class="row">
+    <app-product-list [productList]="productList"></app-product-list>
+</div>
+<app-cart-toaster></app-cart-toaster>
+<br>
+<br>

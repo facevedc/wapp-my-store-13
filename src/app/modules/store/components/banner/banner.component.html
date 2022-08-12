@@ -1,0 +1,17 @@
+<div id="carouselList" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-inner">
+      <div class="carousel-item" *ngFor="let banner of bannerList; let i = index" [class]="i === 0 ? 'active' : ''">
+        <img src="{{banner}}" class="d-block banner-img" alt="">
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselList" data-bs-slide="prev" aria-label="list-prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselList" data-bs-slide="next" aria-label="list-next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>

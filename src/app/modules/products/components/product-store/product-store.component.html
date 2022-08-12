@@ -1,0 +1,16 @@
+<div class="card">
+    <img loading="lazy" src="{{product.imagenPrincipal}}" class="card-img-top" alt="...">
+    <div class="card-body text-start">
+        <h5 class="card-title">{{product.nombre}}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">{{product.descripcion}}</h6>
+    </div>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item text-end">$ {{product.precio}}</li>
+        <li *ngIf="product.promocion" class="list-group-item text-end">$ {{product.promocionPrecio}}</li>
+    </ul>
+    <ul class="list-group list-group-flush text-center">
+        <li class="list-group-item text-center">
+            <button type="button" class="btn btn-warning" aria-label="add-cart" (click)="addCart()">Agregar al Carro</button>
+        </li>
+    </ul>
+  </div>

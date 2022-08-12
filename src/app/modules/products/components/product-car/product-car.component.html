@@ -1,0 +1,21 @@
+<a href="#" class="list-group-item list-group-item-action lh-sm" aria-current="true">
+    <div class="row">
+        <div class="col-2 d-flex align-items-center justify-content-center">
+            <img loading="lazy" src="{{productCar.imagenPrincipal}}" alt="">
+        </div>
+        <div class="col-10">
+            <div class="d-flex w-80 align-items-center justify-content-between">
+                <strong class="mb-1">{{productCar.nombre}}</strong>
+                <small>$ {{productCar.totalPrecio}}</small>
+            </div>
+            <div class="d-flex w-80 align-items-center justify-content-between">
+                <div class="col-9 mb-1 small"> x {{productCar.cantidad}}</div>
+                <div class="col-3 mb-1 mr-1 small d-flex align-items-center justify-content-between">
+                   
+                    <button class="btn btn-warning" (click)="downgradeProduct()" aria-label="button-downgrade-product">-</button>
+                    <button class="btn btn-warning" (click)="addProduct()" aria-label="button-add-product">+</button>
+                </div>
+            </div>
+        </div>
+    </div>    
+</a>
